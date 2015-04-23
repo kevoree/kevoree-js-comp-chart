@@ -1,0 +1,12 @@
+{
+  "scripts": [
+    "vendor/chart/Chart.js",
+    "vendor/angular-chart/angular-chart.js"
+  ],
+  "styles": [
+    "vendor/angular-chart/angular-chart.css"
+  ],
+  "depModules": [
+    "chart.js"
+  ]
+}
