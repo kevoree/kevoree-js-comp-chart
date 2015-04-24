@@ -56053,12 +56053,18 @@ var AbstractComponent = require('kevoree-entities').AbstractComponent;
 var Chart = AbstractComponent.extend({
     toString: 'Chart',
 
+    dic_xLimit: { defaultValue: 30 },
+
     construct: function () {
         this.values = [];
         this.updateChart = function () { /* noop */ };
     },
 
     in_input: function (val) {
+        var xLimit = this.dictionary.getNumber('xLimit', 30);
+        while (this.values.length >= xLimit) {
+            this.values.shift();
+        }
         this.values.push(parseFloat(val));
         this.updateChart();
     },
@@ -56076,6 +56082,7 @@ var Chart = AbstractComponent.extend({
             instance.updateChart = function () {
                 $timeout(function () {
                     $scope.values = [ instance.values ];
+                    $scope.labels = instance.values;
                 });
             };
 

@@ -2,15 +2,13 @@ add node0, browser : JavascriptNode
 add sync : WSGroup
 add browser.chart : Chart
 add browser.ticker : Ticker
-add chan: RemoteWSChan/5.2.9-SNAPSHOT
+add chan: LocalChannel
 
 attach node0, browser sync
 
 set browser.ticker.random = "true"
-set browser.ticker.period = "2000"
+set browser.ticker.period = "500"
 set sync.master = 'node0'
-set chan.host = 'ws.kevoree.org'
-set chan.uuid = 'leiko-chart'
 
 bind browser.chart.input chan
 bind browser.ticker.tick chan

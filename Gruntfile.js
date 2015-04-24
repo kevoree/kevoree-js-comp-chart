@@ -64,7 +64,9 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', 'build');
     grunt.registerTask('build', ['kevoree_genmodel', 'browser']);
+    grunt.registerTask('build:devmode', ['kevoree_genmodel', 'browser:devmode']);
     grunt.registerTask('publish', ['kevoree_registry']);
     grunt.registerTask('kev', ['kevoree']);
     grunt.registerTask('browser', ['browserify', 'uglify']);
+    grunt.registerTask('browser:devmode', 'browserify');
 };
