@@ -1,2 +1,6 @@
-<button data-ng-click="clearValues()">Clear values</button>
-<canvas class="chart chart-line" data-data="values" data-labels="labels" data-options="{ animation: false }"></canvas>
+<div class="top-panel clearfix">
+    <button class="btn btn-default btn-xs" data-ng-click="reset()">Reset</button>
+</div>
+<div class="chart-panel">
+    <canvas class="chart chart-line" data-data="values" data-labels="labels" data-options="options"></canvas>
+</div>
